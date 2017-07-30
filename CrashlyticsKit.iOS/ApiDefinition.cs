@@ -6,18 +6,15 @@
 // Copyright (c) 2017 Wimobia.com, Inc.  All Rights Reserved Worldwide.
 //
 using System;
-
-using UIKit;
 using Foundation;
 using ObjCRuntime;
-using CoreGraphics;
 
 namespace Bindings.CrashlyticsKit
 {
 	// @protocol CLSCrashReport <NSObject>
 	[Protocol, Model]
 	[BaseType(typeof(NSObject))]
-	interface ICLSCrashReport
+	interface CLSCrashReport
 	{
 		// @required @property (readonly, copy, nonatomic) NSString * _Nonnull identifier;
 		[Abstract]
@@ -58,7 +55,7 @@ namespace Bindings.CrashlyticsKit
 	// @interface CLSReport : NSObject <CLSCrashReport>
 	[BaseType(typeof(NSObject))]
 	[DisableDefaultCtor]
-	interface CLSReport : ICLSCrashReport
+	interface CLSReport : CLSCrashReport
 	{
 		// @property (readonly, copy, nonatomic) NSString * _Nonnull identifier;
 		[Export("identifier")]
@@ -395,7 +392,7 @@ namespace Bindings.CrashlyticsKit
 
 		// @optional -(void)crashlytics:(Crashlytics * _Nonnull)crashlytics didDetectCrashDuringPreviousExecution:(id<CLSCrashReport> _Nonnull)crash __attribute__((deprecated("Please refer to -crashlyticsDidDetectReportForLastExecution:")));
 		[Export("crashlytics:didDetectCrashDuringPreviousExecution:")]
-		void Crashlytics(Crashlytics crashlytics, ICLSCrashReport crash);
+		void Crashlytics(Crashlytics crashlytics, CLSCrashReport crash);
 
 		// @optional -(void)crashlyticsDidDetectReportForLastExecution:(CLSReport * _Nonnull)report completionHandler:(void (^ _Nonnull)(BOOL))completionHandler;
 		[Export("crashlyticsDidDetectReportForLastExecution:completionHandler:")]
