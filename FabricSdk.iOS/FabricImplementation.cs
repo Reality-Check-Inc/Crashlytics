@@ -13,8 +13,11 @@ namespace FabricSdk
 {
 	public sealed class FabricImplementation : IFabric
 	{
+		bool _debug;
+
 		public FabricImplementation()
 		{
+			Console.WriteLine("Fabric initialized (iOS)");
 		}
 
 		public string AppIdentifier {
@@ -31,11 +34,11 @@ namespace FabricSdk
 
 		public bool Debug {
 			get {
-				throw new NotImplementedException();
+				return _debug;
 			}
 
 			set {
-				throw new NotImplementedException();
+				_debug = value;
 			}
 		}
 

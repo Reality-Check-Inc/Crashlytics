@@ -5,7 +5,6 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E93D1382-5023-4313-BB61-1DB1B7DA1495}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
     <RootNamespace>CrashlyticsSample</RootNamespace>
     <AssemblyName>CrashlyticsSample</AssemblyName>
@@ -41,10 +40,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AnswersKit\AnswersKit.csproj">
-      <Project>{FFC8751B-656C-41FB-AB28-165B74E2E0C3}</Project>
-      <Name>AnswersKit</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\CrashlyticsKit\CrashlyticsKit.csproj">
       <Project>{D8F77B29-B23B-48D9-AC43-951AECF12667}</Project>
       <Name>CrashlyticsKit</Name>

@@ -14,11 +14,11 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidTlsProvider></AndroidTlsProvider>
-    <PackageId>Fabric.Crashlytics.Beta.Droid</PackageId>
-    <PackageVersion>1.2.5</PackageVersion>
-    <Authors>David N. Junod</Authors>
+    <PackageId>Fabric.BetaKit.Droid</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>David N. Junod</Owners>
+    <Owners>Reality Check</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
     <PackageReleaseNotes>1.2.5</PackageReleaseNotes>
     <Summary>Painless beta distributions for iOS, Android, and Unity apps.</Summary>
@@ -70,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="Jars\beta-1.2.5.aar" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FabricSdk.Droid\FabricSdk.Droid.csproj">
+      <Project>{ECF8971C-6B25-4F28-AEC4-5398C4378E46}</Project>
+      <Name>FabricSdk.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />

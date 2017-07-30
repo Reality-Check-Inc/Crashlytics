@@ -8,13 +8,18 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace FabricSdk
 {
 	public sealed class FabricImplementation : IFabric
 	{
+		bool _debug = false;
+		ICollection<IKit> _kits = new List<IKit>();
+
 		public FabricImplementation()
 		{
+			Console.WriteLine("Fabric initialization (Android)");
 		}
 
 		public string AppIdentifier {
@@ -31,11 +36,11 @@ namespace FabricSdk
 
 		public bool Debug {
 			get {
-				throw new NotImplementedException();
+				return _debug;
 			}
 
 			set {
-				throw new NotImplementedException();
+				_debug = value;
 			}
 		}
 
@@ -56,8 +61,5 @@ namespace FabricSdk
 				throw new NotImplementedException();
 			}
 		}
-
-		public event EventHandler AfterInitialize;
-		public event EventHandler BeforeInitialize;
 	}
 }

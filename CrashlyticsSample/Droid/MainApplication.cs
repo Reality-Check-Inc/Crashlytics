@@ -78,13 +78,18 @@ namespace CrashlyticsSample.Droid
 
 			// we can initialize Crashlytics
  			Console.WriteLine("Initialize Fabric");
-			Crashlytics.Instance.Initialize();
-			Fabric.Instance.Debug = true;
-			Fabric.Instance.Initialize(this);
+			var crashlyticsKit = Crashlytics.Current;
+			Fabric.Current.Debug = true;
+
+			/*
+			Crashlytics.Current.Initialize();
+			Fabric.Current.Debug = true;
+			Fabric.Current.Initialize(this);
 			Console.WriteLine("Fabric initialized");
 
-			Crashlytics.Instance.SetUserIdentifier("12345");
-			Crashlytics.Instance.SetUserName("Sample User");
+			Crashlytics.Current.SetUserIdentifier("12345");
+			Crashlytics.Current.SetUserName("Sample User");
+			 */
 		}
 	}
 }

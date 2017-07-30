@@ -11,10 +11,10 @@
     <AssemblyName>CrashlyticsKit.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>Fabric.CrashlyticsKit.iOS</PackageId>
-    <PackageVersion>3.8.5</PackageVersion>
-    <Authors>David N. Junod</Authors>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>David N. Junod</Owners>
+    <Owners>Reality Check, Inc.</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
     <PackageReleaseNotes>3.8.5</PackageReleaseNotes>
     <Title>CrashlyticsKit (iOS)</Title>
@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Crashlytics.cs" />
+    <Compile Include="..\CrashlyticsKit\Crashlytics.cs">
+      <Link>Crashlytics.cs</Link>
+    </Compile>
+    <Compile Include="CrashlyticsImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
@@ -61,17 +64,9 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrashlyticsKit\CrashlyticsKit.csproj">
-      <Project>{D8F77B29-B23B-48D9-AC43-951AECF12667}</Project>
-      <Name>CrashlyticsKit</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FabricSdk.iOS\FabricSdk.iOS.csproj">
       <Project>{1C970F41-35BC-4332-86E8-45F9D3288041}</Project>
       <Name>FabricSdk.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FabricSdk\FabricSdk.csproj">
-      <Project>{3947EAA1-00D4-4CDD-977B-598E503CDBAE}</Project>
-      <Name>FabricSdk</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

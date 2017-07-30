@@ -3,9 +3,8 @@ Xamarin component for Crashlytics
 
 | Module                        | Framework     | Version | Date |
 |-------------------------------|---------------|---------|------|
-| Fabric.AnswersKit             | Profile111    | 1.3.12  | 2017/07/29 |
 | Fabric.AnswersKit.Droid       | monoandroid60 | 1.3.13  | 2017/07/29 |
-| Fabric.Crashlytics.Beta.Droid | monoandroid60 | 1.2.5   | 2017/07/29 |
+| Fabric.BetaKit.Droid          | monoandroid60 | 1.2.5   | 2017/07/29 |
 | Fabric.Crashlytics.Core.Droid | monoandroid60 | 2.3.17  | 2017/07/29 |
 | Fabric.CrashlyticsKit         | Profile111    | 2.6.7   | 2017/07/29 |
 | Fabric.CrashlyticsKit.Droid   | monoandroid60 | 2.6.8   | 2017/07/29 |

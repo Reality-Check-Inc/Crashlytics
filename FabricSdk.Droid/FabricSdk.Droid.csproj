@@ -71,12 +71,6 @@
     <TransformFile Include="Transforms\Metadata.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FabricSdk\FabricSdk.csproj">
-      <Project>{3947EAA1-00D4-4CDD-977B-598E503CDBAE}</Project>
-      <Name>FabricSdk</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Jars\" />
   </ItemGroup>
   <ItemGroup>

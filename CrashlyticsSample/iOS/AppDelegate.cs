@@ -24,9 +24,9 @@ namespace CrashlyticsSample.iOS
 			global::Xamarin.Forms.Forms.Init();
 
 			// Crashlytics initialization
-			Crashlytics.Instance.Initialize();
-			Fabric.Instance.Debug = true;
-			Fabric.Instance.Initialize();
+ 			Console.WriteLine("Initialize Fabric");
+			var crashlyticsKit = Crashlytics.Current;
+			Fabric.Current.Debug = true;
 
 			LoadApplication(new App());
 

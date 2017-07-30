@@ -14,16 +14,16 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidTlsProvider></AndroidTlsProvider>
-    <PackageId>Fabric.Crashlytics.Core.Droid</PackageId>
-    <PackageVersion>2.3.17</PackageVersion>
-    <Authors>David N. Junod</Authors>
+    <PackageId>Fabric.CrashlyticsCore.Droid</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>David N. Junod</Owners>
+    <Owners>Reality Check, Inc.</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
     <PackageReleaseNotes>2.3.17</PackageReleaseNotes>
     <PackageTags>fabric, crashlytics, core</PackageTags>
-    <Title>Crashlytics Core (Android)</Title>
-    <Description>Crashlytics Core</Description>
+    <Title>CrashlyticsCore (Android)</Title>
+    <Description>CrashlyticsCore</Description>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="Jars\crashlytics-core-2.3.17.aar" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FabricSdk.Droid\FabricSdk.Droid.csproj">
+      <Project>{ECF8971C-6B25-4F28-AEC4-5398C4378E46}</Project>
+      <Name>FabricSdk.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />

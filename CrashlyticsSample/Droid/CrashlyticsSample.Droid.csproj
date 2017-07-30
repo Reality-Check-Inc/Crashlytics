@@ -108,41 +108,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrashlyticsSample\CrashlyticsSample.csproj">
-      <Project>{E93D1382-5023-4313-BB61-1DB1B7DA1495}</Project>
-      <Name>CrashlyticsSample</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AnswersKit\AnswersKit.csproj">
-      <Project>{FFC8751B-656C-41FB-AB28-165B74E2E0C3}</Project>
-      <Name>AnswersKit</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\AnswersKit.Droid\AnswersKit.Droid.csproj">
       <Project>{972B4DCB-90B7-4C28-B491-35F5AA7E3136}</Project>
       <Name>AnswersKit.Droid</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CrashlyticsBeta.Droid\CrashlyticsBeta.Droid.csproj">
       <Project>{7F4CE388-C491-4193-8732-849BC4107FB5}</Project>
-      <Name>CrashlyticsBeta.Droid</Name>
+      <Name>BetaKit.Droid</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CrashlyticsCore.Droid\CrashlyticsCore.Droid.csproj">
       <Project>{BC02F6D1-3257-428B-99B4-7B0265891190}</Project>
       <Name>CrashlyticsCore.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CrashlyticsKit\CrashlyticsKit.csproj">
-      <Project>{D8F77B29-B23B-48D9-AC43-951AECF12667}</Project>
-      <Name>CrashlyticsKit</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\CrashlyticsKit.Droid\CrashlyticsKit.Droid.csproj">
       <Project>{48F1AE1F-B001-4066-BCAF-647878F36757}</Project>
       <Name>CrashlyticsKit.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\FabricSdk\FabricSdk.csproj">
-      <Project>{3947EAA1-00D4-4CDD-977B-598E503CDBAE}</Project>
-      <Name>FabricSdk</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\FabricSdk.Droid\FabricSdk.Droid.csproj">
       <Project>{ECF8971C-6B25-4F28-AEC4-5398C4378E46}</Project>
       <Name>FabricSdk.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrashlyticsSample\CrashlyticsSample.csproj">
+      <Project>{E93D1382-5023-4313-BB61-1DB1B7DA1495}</Project>
+      <Name>CrashlyticsSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

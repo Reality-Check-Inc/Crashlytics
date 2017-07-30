@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrashlyticsSample.Droid", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabricSdk", "FabricSdk\FabricSdk.csproj", "{3947EAA1-00D4-4CDD-977B-598E503CDBAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnswersKit", "AnswersKit\AnswersKit.csproj", "{FFC8751B-656C-41FB-AB28-165B74E2E0C3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabricSdk.Droid", "FabricSdk.Droid\FabricSdk.Droid.csproj", "{ECF8971C-6B25-4F28-AEC4-5398C4378E46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabricSdk.iOS", "FabricSdk.iOS\FabricSdk.iOS.csproj", "{1C970F41-35BC-4332-86E8-45F9D3288041}"
@@ -23,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrashlyticsKit.iOS", "Crash
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnswersKit.Droid", "AnswersKit.Droid\AnswersKit.Droid.csproj", "{972B4DCB-90B7-4C28-B491-35F5AA7E3136}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrashlyticsBeta.Droid", "CrashlyticsBeta.Droid\CrashlyticsBeta.Droid.csproj", "{7F4CE388-C491-4193-8732-849BC4107FB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetaKit.Droid", "CrashlyticsBeta.Droid\BetaKit.Droid.csproj", "{7F4CE388-C491-4193-8732-849BC4107FB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrashlyticsCore.Droid", "CrashlyticsCore.Droid\CrashlyticsCore.Droid.csproj", "{BC02F6D1-3257-428B-99B4-7B0265891190}"
 EndProject
@@ -85,18 +83,6 @@ Global
 		{3947EAA1-00D4-4CDD-977B-598E503CDBAE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{3947EAA1-00D4-4CDD-977B-598E503CDBAE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{3947EAA1-00D4-4CDD-977B-598E503CDBAE}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Release|iPhone.Build.0 = Release|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{FFC8751B-656C-41FB-AB28-165B74E2E0C3}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{ECF8971C-6B25-4F28-AEC4-5398C4378E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECF8971C-6B25-4F28-AEC4-5398C4378E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF8971C-6B25-4F28-AEC4-5398C4378E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
