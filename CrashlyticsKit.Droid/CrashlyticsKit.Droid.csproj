@@ -15,12 +15,12 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidTlsProvider></AndroidTlsProvider>
     <PackageId>Fabric.CrashlyticsKit.Droid</PackageId>
-    <PackageVersion>2.6.7</PackageVersion>
+    <PackageVersion>2.6.8</PackageVersion>
     <Authors>David N. Junod</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Owners>David N. Junod</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>2.6.7</PackageReleaseNotes>
+    <PackageReleaseNotes>2.6.8</PackageReleaseNotes>
     <Title>CrashlyticsKit (Android)</Title>
     <Description>The most powerful, yet lightest weight crash reporting solution</Description>
     <PackOnBuild>true</PackOnBuild>
@@ -60,6 +60,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="packages.config" />
+    <None Include="Jars\AboutJars.txt" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\EnumFields.xml" />
@@ -100,7 +101,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\crashlytics-2.6.7.aar" />
+    <LibraryProjectZip Include="Jars\crashlytics-2.6.8.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />

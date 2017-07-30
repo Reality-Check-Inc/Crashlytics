@@ -4,14 +4,14 @@ Xamarin component for Crashlytics
 | Module                        | Framework     | Version | Date |
 |-------------------------------|---------------|---------|------|
 | Fabric.AnswersKit             | Profile111    | 1.3.12  | 2017/07/29 |
-| Fabric.AnswersKit.Droid       | monoandroid60 | 1.3.12  | 2017/07/29 |
-| Fabric.Crashlytics.Beta.Droid | monoandroid60 | 1.2.4   | 2017/07/29 |
-| Fabric.Crashlytics.Core.Droid | monoandroid60 | 2.3.16  | 2017/07/29 |
-| Fabric.Crashlytics.Kit        | Profile111    | 2.6.7   | 2017/07/29 |
-| Fabric.Crashlytics.Kit.Droid  | monoandroid60 | 2.6.7   | 2017/07/29 |
-| Fabric.Crashlytics.Kit.iOS    | xamarinios10  | 3.8.5   | 2017/07/29 |
+| Fabric.AnswersKit.Droid       | monoandroid60 | 1.3.13  | 2017/07/29 |
+| Fabric.Crashlytics.Beta.Droid | monoandroid60 | 1.2.5   | 2017/07/29 |
+| Fabric.Crashlytics.Core.Droid | monoandroid60 | 2.3.17  | 2017/07/29 |
+| Fabric.CrashlyticsKit         | Profile111    | 2.6.7   | 2017/07/29 |
+| Fabric.CrashlyticsKit.Droid   | monoandroid60 | 2.6.8   | 2017/07/29 |
+| Fabric.CrashlyticsKit.iOS     | xamarinios10  | 3.8.5   | 2017/07/29 |
 | FabricSdk                     | Profile111    | 1.3.16  | 2017/07/29 |
-| FabricSdk.Droid               | monoandroid60 | 1.3.16  | 2017/07/29 |
+| FabricSdk.Droid               | monoandroid60 | 1.3.17  | 2017/07/29 |
 | FabricSdk.iOS                 | xamarinios10  | 1.6.12  | 2017/07/29 |
 
 Install
@@ -35,11 +35,11 @@ This Xamarin component binds the following versions:
 
 ## Android
 
-- Fabric: 1.3.16
-- Crashlytics: 2.6.7
-- Crashlytics-Core: 2.3.16
-- AnswerKit: 1.3.12
-- Beta: 1.2.4
+- Fabric: 1.3.17
+- Crashlytics: 2.6.8
+- Crashlytics-Core: 2.3.17
+- AnswerKit: 1.3.13
+- Beta: 1.2.5
 
 ## iOS
 
@@ -89,6 +89,28 @@ Further details:
 
 [iOS Bindings](https://developer.xamarin.com/guides/cross-platform/macios/binding/)
 
+### Android
+
+On Android, get the latest Answers, Beta, Crashlytics, and Crashlytics-Core aar files from
+
+    $HOME/.gradle/caches/modules-2/files-2.1/com.crashlytics.sdk.android
+    
+Get the latest Fabric aar file from
+
+    $HOME/.gradle/caches/modules-2/files-2.1/io.fabric.sdk.android
+
+Ensure that the .aar is set to Build Action -> LibraryProjectZip.
+
+After building the binding library, look for api.xml in the obj/Debug directory.
+
+To sort of pretty print the xml:
+
+    cat LogMindsSdk.Droid/obj/Debug/api.xml | xmllint --format - > droidapi.xml
+    
+Further details:
+
+[Android .AAR Bindings](https://developer.xamarin.com/guides/android/advanced_topics/binding-a-java-library/binding-an-aar/)
+
 ### Xamarin Studio
 
 open -n /Applications/Xamarin\ Studio.app/
@@ -102,11 +124,11 @@ The NuGet is privately hosted on TestMinds.com.
     NuGet Push CrashlyticsKit/bin/release/Fabric.CrashlyticsKit.2.6.7.nupkg -Source http://testminds.com/nuget/upload
     NuGet Push AnswersKit/bin/release/Fabric.AnswersKit.1.3.12.nupkg -Source http://testminds.com/nuget/upload
 
-    NuGet Push FabricSdk.Droid/bin/release/FabricSdk.Droid.1.3.16.nupkg -Source http://testminds.com/nuget/upload
-    NuGet Push CrashlyticsKit.Droid/bin/release/Fabric.CrashlyticsKit.Droid.2.6.7.nupkg -Source http://testminds.com/nuget/upload
-    NuGet Push CrashlyticsCore.Droid/bin/release/Fabric.Crashlytics.Core.Droid.2.3.16.nupkg -Source http://testminds.com/nuget/upload
-    NuGet Push CrashlyticsBeta.Droid/bin/release/Fabric.Crashlytics.Beta.Droid.1.2.4.nupkg -Source http://testminds.com/nuget/upload
-    NuGet Push AnswersKit.Droid/bin/release/Fabric.AnswersKit.Droid.1.3.12.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push FabricSdk.Droid/bin/release/FabricSdk.Droid.1.3.17.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push CrashlyticsKit.Droid/bin/release/Fabric.CrashlyticsKit.Droid.2.6.8.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push CrashlyticsCore.Droid/bin/release/Fabric.Crashlytics.Core.Droid.2.3.17.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push CrashlyticsBeta.Droid/bin/release/Fabric.Crashlytics.Beta.Droid.1.2.5.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push AnswersKit.Droid/bin/release/Fabric.AnswersKit.Droid.1.3.13.nupkg -Source http://testminds.com/nuget/upload
 
     NuGet Push FabricSdk.iOS/bin/release/FabricSdk.iOS.1.6.12.nupkg -Source http://testminds.com/nuget/upload
     NuGet Push CrashlyticsKit.iOS/bin/release/Fabric.CrashlyticsKit.iOS.3.8.5.nupkg -Source http://testminds.com/nuget/upload

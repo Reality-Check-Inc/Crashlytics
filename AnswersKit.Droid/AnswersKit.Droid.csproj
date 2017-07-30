@@ -15,16 +15,16 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidTlsProvider></AndroidTlsProvider>
     <PackageId>Fabric.AnswersKit.Droid</PackageId>
-    <PackageVersion>1.3.12</PackageVersion>
+    <PackageVersion>1.3.13</PackageVersion>
     <Authors>David N. Junod</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Owners>David N. Junod</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>1.3.12</PackageReleaseNotes>
+    <PackageReleaseNotes>1.3.13</PackageReleaseNotes>
     <Summary>The analytics engine of Fabric</Summary>
     <PackageTags>fabric, crashlytics, answerkit</PackageTags>
     <Title>Answers (Android)</Title>
-    <Description>Answers is Fabric’s mobile analytics SDK. With one click, you can enable real-time analytics that help you understand what's happening in your app. Fabric provides insights into your core goals, such as growth, retention, and engagement. Finally, analytics you don't need to analyze.</Description>
+    <Description>Answers is Fabric's mobile analytics SDK. With one click, you can enable real-time analytics that help you understand what's happening in your app. Fabric provides insights into your core goals, such as growth, retention, and engagement. Finally, analytics you don't need to analyze.</Description>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -72,9 +72,6 @@
     <Folder Include="Jars\" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\answers-1.3.12.aar" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AnswersKit\AnswersKit.csproj">
       <Project>{FFC8751B-656C-41FB-AB28-165B74E2E0C3}</Project>
       <Name>AnswersKit</Name>
@@ -87,6 +84,9 @@
       <Project>{ECF8971C-6B25-4F28-AEC4-5398C4378E46}</Project>
       <Name>FabricSdk.Droid</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryProjectZip Include="Jars\answers-1.3.13.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />

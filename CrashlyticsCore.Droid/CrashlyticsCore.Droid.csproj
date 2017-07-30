@@ -15,12 +15,12 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidTlsProvider></AndroidTlsProvider>
     <PackageId>Fabric.Crashlytics.Core.Droid</PackageId>
-    <PackageVersion>2.3.16</PackageVersion>
+    <PackageVersion>2.3.17</PackageVersion>
     <Authors>David N. Junod</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Owners>David N. Junod</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>2.3.16</PackageReleaseNotes>
+    <PackageReleaseNotes>2.3.17</PackageReleaseNotes>
     <PackageTags>fabric, crashlytics, core</PackageTags>
     <Title>Crashlytics Core (Android)</Title>
     <Description>Crashlytics Core</Description>
@@ -68,7 +68,7 @@
     <TransformFile Include="Transforms\Metadata.xml" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\crashlytics-core-2.3.16.aar" />
+    <LibraryProjectZip Include="Jars\crashlytics-core-2.3.17.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />
