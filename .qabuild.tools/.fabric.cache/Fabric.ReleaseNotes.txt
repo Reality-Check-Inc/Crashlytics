@@ -1,0 +1,66 @@
+// Release Notes
+
+** Fabric v. 1.2.5 **
+
+Updated API usage to support Unity 5.6
+
+** Fabric v. 1.2.4 **
+
+Updated license notice within the package.
+
+
+** Fabric v. 1.2.3 **
+
+Fixed bug blocking saving of existing scenes when Fabric GameObjects are added.
+Fixed bug causing Fabric settings to be lost when Unity restarts after the Library directory is deleted.
+
+
+** Fabric v. 1.2.2 **
+
+Fixed a few tiny issues with the auto-updater.
+
+
+** Fabric v. 1.2.1 **
+
+This update introduces a new SDK: MoPub, the world's largest mobile ad server and exchange. Now you can make "mo' dolla dolla bills" in your games!
+
+We always strive to be good citizens in your app, so now Fabric will clean up after itself a little more effectively. :)
+
+
+** Fabric v. 1.2.0 **
+
+Introducing manual initialization so you can wait (if you want) to initialize the SDK later, alligator.
+
+We also added dependency conflict resolution meaning we’ll hoist up a red flag if downloading a new kit will put another at risk.
+
+Finally, we beefed up security and made it easier to build apps in batch mode. Woo hoo!
+
+
+** Fabric v. 1.1.0 **
+
+Introducing some extra leeway during the installation of a Fabric kit. Now, you can wait to build and run your app when it's convenient, to finish onboarding with Fabric. More flexibility is so clutch.
+
+Improved parsing Xcode project files. High five!
+
+
+** Fabric v. 1.0.2 **
+
+Put some elbow grease on our onboarding process to add some fun animations. Try it out by onboarding a new app!
+
+
+** Fabric v. 1.0.1 **
+
+Happy Spring! We introduced a delightful offline mode that paved the way for more polished error messages in case of network failure. We're proud to announce that we decreased our distribution SDK size by way of removing some unnecessary files.
+
+
+** Fabric v. 1.0.0 **
+
+We have some special news to share,
+And recommend you sit down to prepare,
+You'll see a change in the version we display,
+Because we're officially releasing v1.0 today. 
+
+Thank you all for the amazing feedback,
+Whether in-person, email, Twitter or Slack,
+The effort we're devoting to this is completely wholehearted,
+So this is the beginning, we're just getting started.

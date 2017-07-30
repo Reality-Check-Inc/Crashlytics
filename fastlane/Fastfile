@@ -1,0 +1,51 @@
+fastlane_version "2.19.3"
+
+before_all do
+  # ENV["SLACK_URL"] = "https://hooks.slack.com/services/.."
+  ENV["CRASHLYTICS_API_TOKEN"] = "d223e183f143c7dd3ea46bcba0f2b5014674ec67"
+  ENV["CRASHLYTICS_BUILD_SECRET"] = "93e666caef6f3860964f91ab0fa9e69097566dab57300f4b1d066e6836258ed5"
+end
+
+platform :ios do
+  # setup match per fastlane tools
+  # see also, https://codesigning.guide
+  desc "Make sure iOS Apple App Store certificates are setup"
+  lane :ensure do
+    cert
+    sigh
+  end
+
+  desc "Submit a new iOS QA Build to Crashlytics Beta"
+  lane :qabuild do
+    # Generate the changelog based on commit messages since your last tag
+    # changelog_from_git_commits
+    changelog = File.read("../changes.iOS.txt")
+    crashlytics(
+      ipa_path: "build/Recap.iOS/Recap.ipa",
+      notes: changelog,
+      groups: "iOS-internal-testers"
+    )
+    slack(message: changelog)
+  end
+end
+
+platform :android do
+  desc "Submit a new Android QA Build to Crashlytics Beta"
+  lane :qabuild do
+    # Generate the changelog based on commit messages since your last tag
+    # changelog_from_git_commits
+    changelog = File.read("../changes.Droid.txt")
+    crashlytics(
+      apk_path: "build/Recap.Droid/com.wimobia.recapvideo.apk",
+      notes: changelog,
+      groups: "Android-internal-testers"
+    )
+    slack(message: changelog)
+  end
+end
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used
+# No personal data is sent or shared. Learn more at https://github.com/fastlane/enhancer

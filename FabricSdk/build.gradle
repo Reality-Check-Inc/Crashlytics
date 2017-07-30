@@ -1,0 +1,13 @@
+apply plugin: 'com.reality-check-inc.gradle.xamarin-build'
+
+xamarin {
+	genericLibraryProject {
+        projectName 'FabricSdk'
+        projectFile 'FabricSdk.csproj'
+        solutionFile '../Recap.sln'
+		configurations {
+			Debug
+			Release
+		}
+	}
+}

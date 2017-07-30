@@ -1,0 +1,17 @@
+apply plugin: 'com.reality-check-inc.gradle.xamarin-build'
+
+xamarin {
+	iOSLibraryProject {
+        projectName 'FabricSdk.iOS'
+        projectFile 'FabricSdk.iOS.csproj'
+        solutionFile '../Recap.sln'
+		configurations {
+			Debug
+			Release
+		}
+	}
+}
+
+dependencies {
+    xamarin.referenceProject(':FabricSdk')
+}

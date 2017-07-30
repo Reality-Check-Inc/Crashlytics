@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48F1AE1F-B001-4066-BCAF-647878F36757}</ProjectGuid>
+    <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CrashlyticsKit</RootNamespace>
+    <AssemblyName>CrashlyticsKit.Droid</AssemblyName>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidTlsProvider></AndroidTlsProvider>
+    <PackageId>Fabric.CrashlyticsKit.Droid</PackageId>
+    <PackageVersion>2.6.7</PackageVersion>
+    <Authors>David N. Junod</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Owners>David N. Junod</Owners>
+    <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
+    <PackageReleaseNotes>2.6.7</PackageReleaseNotes>
+    <Title>CrashlyticsKit (Android)</Title>
+    <Description>The most powerful, yet lightest weight crash reporting solution</Description>
+    <PackOnBuild>true</PackOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Crashlytics.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Additions\AboutAdditions.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TransformFile Include="Transforms\EnumFields.xml" />
+    <TransformFile Include="Transforms\EnumMethods.xml" />
+    <TransformFile Include="Transforms\Metadata.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jars\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrashlyticsKit\CrashlyticsKit.csproj">
+      <Project>{D8F77B29-B23B-48D9-AC43-951AECF12667}</Project>
+      <Name>CrashlyticsKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FabricSdk\FabricSdk.csproj">
+      <Project>{3947EAA1-00D4-4CDD-977B-598E503CDBAE}</Project>
+      <Name>FabricSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FabricSdk.Droid\FabricSdk.Droid.csproj">
+      <Project>{ECF8971C-6B25-4F28-AEC4-5398C4378E46}</Project>
+      <Name>FabricSdk.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnswersKit\AnswersKit.csproj">
+      <Project>{FFC8751B-656C-41FB-AB28-165B74E2E0C3}</Project>
+      <Name>AnswersKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnswersKit.Droid\AnswersKit.Droid.csproj">
+      <Project>{972B4DCB-90B7-4C28-B491-35F5AA7E3136}</Project>
+      <Name>AnswersKit.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrashlyticsBeta.Droid\CrashlyticsBeta.Droid.csproj">
+      <Project>{7F4CE388-C491-4193-8732-849BC4107FB5}</Project>
+      <Name>CrashlyticsBeta.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrashlyticsCore.Droid\CrashlyticsCore.Droid.csproj">
+      <Project>{BC02F6D1-3257-428B-99B4-7B0265891190}</Project>
+      <Name>CrashlyticsCore.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryProjectZip Include="Jars\crashlytics-2.6.7.aar" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.157-dev\build\NuGet.Build.Packaging.targets')" />
+</Project>

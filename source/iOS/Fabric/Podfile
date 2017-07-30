@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+install! 'cocoapods', :integrate_targets => false
+target 'ObjectiveSharpieIntegration' do
+  use_frameworks!
+end
+pod 'Crashlytics'
+pod 'Fabric'

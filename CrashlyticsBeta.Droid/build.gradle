@@ -1,0 +1,21 @@
+apply plugin: 'com.reality-check-inc.gradle.xamarin-build'
+
+xamarin {
+	androidLibraryProject {
+        projectName 'CrashlyticsBeta.Droid'
+        projectFile 'CrashlyticsBeta.Droid.csproj'
+        solutionFile '../Recap.sln'
+		configurations {
+			Debug
+			Release
+		}
+	}
+}
+
+dependencies {
+    xamarin.referenceProject(':FabricSdk')
+    xamarin.referenceProject(':FabricSdk.Droid')
+    xamarin.referenceProject(':CrashlyticsKit')
+    xamarin.referenceProject(':CrashlyticsKit.Droid')
+    xamarin.referenceProject(':CrashlyticsCore.Droid')
+}

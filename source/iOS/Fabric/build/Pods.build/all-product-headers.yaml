@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/djunod2/Wimobia/wimobia.mobile/donotuse/iOS/Fabric/build/Release-iphoneos/Pods_ObjectiveSharpieIntegration.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-ObjectiveSharpieIntegration-umbrella.h",
+          'external-contents': "/Users/djunod2/Wimobia/wimobia.mobile/donotuse/iOS/Fabric/Pods/Target Support Files/Pods-ObjectiveSharpieIntegration/Pods-ObjectiveSharpieIntegration-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_ObjectiveSharpieIntegration-Swift.h",
+          'external-contents': "/Users/djunod2/Wimobia/wimobia.mobile/donotuse/iOS/Fabric/build/Release-iphoneos/Pods_ObjectiveSharpieIntegration.framework/Headers/Pods_ObjectiveSharpieIntegration-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/djunod2/Wimobia/wimobia.mobile/donotuse/iOS/Fabric/build/Release-iphoneos/Pods_ObjectiveSharpieIntegration.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/djunod2/Wimobia/wimobia.mobile/donotuse/iOS/Fabric/build/Pods.build/Release-iphoneos/Pods-ObjectiveSharpieIntegration.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
