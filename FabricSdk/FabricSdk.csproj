@@ -12,12 +12,12 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
     <PackageId>FabricSdk</PackageId>
-    <PackageVersion>1.3.16</PackageVersion>
-    <Authors>David N. Junod</Authors>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>David N. Junod</Owners>
+    <Owners>Reality Check, Inc.</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>1.3.16</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.0</PackageReleaseNotes>
     <Title>Fabric SDK</Title>
     <Description>Fabric SDK</Description>
     <PackOnBuild>true</PackOnBuild>
@@ -27,7 +27,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -38,9 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IFabric.cs" />
+    <Compile Include="Fabric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IKit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

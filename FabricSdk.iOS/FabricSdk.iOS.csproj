@@ -11,12 +11,12 @@
     <AssemblyName>FabricSdk.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>FabricSdk.iOS</PackageId>
-    <PackageVersion>1.6.12</PackageVersion>
-    <Authors>David N. Junod</Authors>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>David N. Junod</Owners>
+    <Owners>Reality Check, Inc.</Owners>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>1.6.12</PackageReleaseNotes>
+    <PackageReleaseNotes>iOS 1.6.12</PackageReleaseNotes>
     <Title>Fabric SDK (iOS)</Title>
     <Description>Fabric SDK</Description>
     <PackOnBuild>true</PackOnBuild>
@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fabric.cs" />
-    <Compile Include="Kit.cs" />
+    <Compile Include="FabricImplementation.cs" />
+    <Compile Include="..\FabricSdk\Fabric.cs">
+      <Link>Fabric.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />

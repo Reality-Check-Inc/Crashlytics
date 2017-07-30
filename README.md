@@ -26,6 +26,20 @@ Install
 
 - Edit info.plist per https://fabric.io/kits/ios/crashlytics/install
 
+Pattern
+-------
+following this pattern, except putting Abstraction into the shared file.
+
+    https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/
+
+ * this file is SHARED between implementations  
+		Fabric.cs - add a link to the file
+ * implementation  
+		FabricImplementation.cs
+ * all implementation assemblies have the same Properties/AssemblyInfo.
+ * General/Main Settings/Name same with .Droid & .iOS
+ * General/Main Settings/Default Namespace exact same
+
 Versions
 --------
 
@@ -105,7 +119,7 @@ After building the binding library, look for api.xml in the obj/Debug directory.
 
 To sort of pretty print the xml:
 
-    cat LogMindsSdk.Droid/obj/Debug/api.xml | xmllint --format - > droidapi.xml
+    cat FabricSdk.Droid/obj/Debug/api.xml | xmllint --format - > api.pretty.xml
     
 Further details:
 
@@ -120,9 +134,9 @@ The NuGet is privately hosted on TestMinds.com.
 
 	NuGet SetApiKey 484B9674-F583-39E5-A9EB-940B066D5D7A -Source http://testminds.com/nuget/upload
 
-    NuGet Push FabricSdk/bin/release/FabricSdk.1.3.16.nupkg -Source http://testminds.com/nuget/upload
-    NuGet Push CrashlyticsKit/bin/release/Fabric.CrashlyticsKit.2.6.7.nupkg -Source http://testminds.com/nuget/upload
-    NuGet Push AnswersKit/bin/release/Fabric.AnswersKit.1.3.12.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push FabricSdk/bin/release/FabricSdk.1.3.17.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push CrashlyticsKit/bin/release/Fabric.CrashlyticsKit.2.6.8.nupkg -Source http://testminds.com/nuget/upload
+    NuGet Push AnswersKit/bin/release/Fabric.AnswersKit.1.3.13.nupkg -Source http://testminds.com/nuget/upload
 
     NuGet Push FabricSdk.Droid/bin/release/FabricSdk.Droid.1.3.17.nupkg -Source http://testminds.com/nuget/upload
     NuGet Push CrashlyticsKit.Droid/bin/release/Fabric.CrashlyticsKit.Droid.2.6.8.nupkg -Source http://testminds.com/nuget/upload

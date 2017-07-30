@@ -1,6 +1,6 @@
 ﻿//
 // AssemblyInfo.cs
-// Recap
+// Crashlytics
 //
 // Created by David N. Junod on 3/20/2017
 // Copyright (c) 2017 Reality Check, Inc.  All Rights Reserved Worldwide.

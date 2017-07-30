@@ -13,11 +13,11 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
     <PackageId>Fabric.AnswersKit</PackageId>
-    <PackageVersion>1.3.12</PackageVersion>
+    <PackageVersion>1.3.13</PackageVersion>
     <Authors>David N. Junod</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>1.3.12</PackageReleaseNotes>
+    <PackageReleaseNotes>1.3.13</PackageReleaseNotes>
     <PackageTags>fabric, crashlytics, answerskit</PackageTags>
     <Description>Answers is Fabric’s mobile analytics SDK. With one click, you can enable real-time analytics that help you understand what's happening in your app. Fabric provides insights into your core goals, such as growth, retention, and engagement. Finally, analytics you don't need to analyze.</Description>
     <PackOnBuild>true</PackOnBuild>

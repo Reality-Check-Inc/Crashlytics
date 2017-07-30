@@ -1,9 +1,9 @@
 ﻿//
 // AssemblyInfo.cs
-// Recap
+// Crashlytics
 //
 // Created by David N. Junod on 3/18/2017
-// Copyright (c) 2017 Wimobia.com, Inc.  All Rights Reserved Worldwide.
+// Copyright (c) 2017 Reality Check, Inc.  All Rights Reserved Worldwide.
 //
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -15,9 +15,9 @@ using Android.App;
 [assembly: AssemblyTitle("FabricSdk.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Wimobia.com, Inc.")]
+[assembly: AssemblyCompany("Reality Check, Inc.")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("Copyright 2017 Wimobia.com, Inc.")]
+[assembly: AssemblyCopyright("Copyright 2017 Reality Check, Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
