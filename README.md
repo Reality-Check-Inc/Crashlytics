@@ -3,15 +3,15 @@ Xamarin component for Crashlytics
 
 | Module                        | Framework     | Version | Date |
 |-------------------------------|---------------|---------|------|
-| Fabric.AnswersKit.Droid       | monoandroid60 | 1.3.13  | 2017/07/29 |
-| Fabric.BetaKit.Droid          | monoandroid60 | 1.2.5   | 2017/07/29 |
-| Fabric.Crashlytics.Core.Droid | monoandroid60 | 2.3.17  | 2017/07/29 |
-| Fabric.CrashlyticsKit         | Profile111    | 2.6.7   | 2017/07/29 |
-| Fabric.CrashlyticsKit.Droid   | monoandroid60 | 2.6.8   | 2017/07/29 |
-| Fabric.CrashlyticsKit.iOS     | xamarinios10  | 3.8.5   | 2017/07/29 |
 | FabricSdk                     | Profile111    | 1.3.16  | 2017/07/29 |
 | FabricSdk.Droid               | monoandroid60 | 1.3.17  | 2017/07/29 |
 | FabricSdk.iOS                 | xamarinios10  | 1.6.12  | 2017/07/29 |
+| Fabric.CrashlyticsKit         | Profile111    | 2.6.7   | 2017/07/29 |
+| Fabric.CrashlyticsKit.Droid   | monoandroid60 | 2.6.8   | 2017/07/29 |
+| Fabric.CrashlyticsKit.iOS     | xamarinios10  | 3.8.5   | 2017/07/29 |
+| Fabric.AnswersKit.Droid       | monoandroid60 | 1.3.13  | 2017/07/29 |
+| Fabric.BetaKit.Droid          | monoandroid60 | 1.2.5   | 2017/07/29 |
+| Fabric.Crashlytics.Core.Droid | monoandroid60 | 2.3.17  | 2017/07/29 |
 
 Install
 -------
@@ -24,20 +24,6 @@ Install
 ## iOS
 
 - Edit info.plist per https://fabric.io/kits/ios/crashlytics/install
-
-Pattern
--------
-following this pattern, except putting Abstraction into the shared file.
-
-    https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/
-
- * this file is SHARED between implementations  
-		Fabric.cs - add a link to the file
- * implementation  
-		FabricImplementation.cs
- * all implementation assemblies have the same Properties/AssemblyInfo.
- * General/Main Settings/Name same with .Droid & .iOS
- * General/Main Settings/Default Namespace exact same
 
 Versions
 --------
@@ -56,12 +42,34 @@ This Xamarin component binds the following versions:
 
 ## iOS
 
-- Fabric: 1.6.12
 - Crashlytics: 3.8.5
+- Fabric: 1.6.12
 
 ## Binding
 
 This section details how to provide bindings for each supported platform.
+
+### Pattern
+
+following this pattern, except putting Abstraction into the shared file.
+
+    https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/
+    
+ * Multiplatform / Library / Portable Library
+ 	Main Settings / Default Namespace: FabricSdk
+ 	Output / Assembly Name: FabricSdk
+ * iOS / Library / Bindings Library
+ 	Main Settings / Default Namespace: FabricSdk
+ 	Output / Assembly Name: FabricSdk
+ * Android / Library / Bindings Library
+ 	Main Settings / Default Namespace: FabricSdk
+ 	Output / Assembly Name: FabricSdk
+
+ * this file is SHARED between implementations  
+		Fabric.cs - add a link to the file
+ * implementation  
+		FabricImplementation.cs
+ * all implementation assemblies have the same Properties/AssemblyInfo.
 
 ### iOS
 
@@ -69,7 +77,7 @@ On iOS we will use Objective Sharpie to create the bindings.
 
 Open a terminal.  
 
-    cd source/iOS/Fabric/  
+    cd workspace/iOS/Fabric/  
     sharpie pod init ios Crashlytics  
     
 add the following to the generated Podfile
@@ -124,9 +132,12 @@ Further details:
 
 [Android .AAR Bindings](https://developer.xamarin.com/guides/android/advanced_topics/binding-a-java-library/binding-an-aar/)
 
-### Xamarin Studio
+### Visual/Xamarin Studio
 
-open -n /Applications/Xamarin\ Studio.app/
+Open multiple from the terminal
+
+    open -n /Applications/Visual\ Studio.app/  
+    open -n /Applications/Xamarin\ Studio.app/  
 
 ### NuGet
 The NuGet is privately hosted on TestMinds.com.

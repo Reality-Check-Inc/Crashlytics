@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C970F41-35BC-4332-86E8-45F9D3288041}</ProjectGuid>
+    <ProjectGuid>{93A4C825-B331-4A9E-AF45-3C291B4C3EC7}</ProjectGuid>
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>FabricSdk</RootNamespace>
-    <AssemblyName>FabricSdk.iOS</AssemblyName>
+    <AssemblyName>FabricSdk</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <PackageId>FabricSdk.iOS</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Authors>Reality Check, Inc.</Authors>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>Reality Check, Inc.</Owners>
-    <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>iOS 1.6.12</PackageReleaseNotes>
-    <Title>Fabric SDK (iOS)</Title>
-    <Description>Fabric SDK</Description>
-    <PackOnBuild>true</PackOnBuild>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,15 +31,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FabricImplementation.cs" />
-    <Compile Include="..\FabricSdk\Fabric.cs">
-      <Link>Fabric.cs</Link>
+    <Compile Include="..\FabricSdk\FabricSdk.cs">
+      <Link>FabricSdk.cs</Link>
     </Compile>
+    <Compile Include="Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
@@ -58,14 +47,10 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\source\iOS\Fabric\Binding\Fabric.framework">
+    <NativeReference Include="..\workspace\iOS\Fabric\Binding\Fabric.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />
 </Project>

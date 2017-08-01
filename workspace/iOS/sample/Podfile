@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+
+use_frameworks!
+
+def sample_pods
+  pod 'Fabric'
+  pod 'Crashlytics'
+end
+
+target :sample do
+  sample_pods
+end

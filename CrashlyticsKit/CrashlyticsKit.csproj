@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D8F77B29-B23B-48D9-AC43-951AECF12667}</ProjectGuid>
+    <ProjectGuid>{4BCF22FA-7030-48D7-9CB6-3DC9EAAE5A99}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
     <RootNamespace>CrashlyticsKit</RootNamespace>
     <AssemblyName>CrashlyticsKit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <PackageId>Fabric.CrashlyticsKit</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Authors>Reality Check, Inc.</Authors>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Owners>Reality Check, Inc.</Owners>
-    <PackageProjectUrl>https://github.com/Reality-Check-Inc/Crashlytics.git</PackageProjectUrl>
-    <PackageReleaseNotes>1.0.0</PackageReleaseNotes>
-    <Title>CrashlyticsKit</Title>
-    <Description>The most powerful, yet lightest weight crash reporting solution</Description>
-    <PackOnBuild>true</PackOnBuild>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,18 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Crashlytics.cs" />
+    <Compile Include="CrashlyticsKit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FabricSdk\FabricSdk.csproj">
-      <Project>{3947EAA1-00D4-4CDD-977B-598E503CDBAE}</Project>
+      <Project>{9BDFB0CD-757A-4B09-A16F-38147399D95E}</Project>
       <Name>FabricSdk</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />
 </Project>
