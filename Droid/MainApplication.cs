@@ -90,15 +90,6 @@ namespace sample.Droid
 			Fabric.Current.Debug = true;
 
             ((FabricImplementation)Fabric.Current).Context = this;
-			/*
-            Crashlytics.Current.Initialize();
-            Fabric.Current.Debug = true;
-            Fabric.Current.Initialize(this);
-            Console.WriteLine("Fabric initialized");
-
-            Crashlytics.Current.SetUserIdentifier("12345");
-            Crashlytics.Current.SetUserName("Sample User");
-             */
 		}
 
     }
