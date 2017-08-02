@@ -71,6 +71,10 @@ following this pattern, except putting Abstraction into the shared file.
 		FabricImplementation.cs
  * all implementation assemblies have the same Properties/AssemblyInfo.
 
+
+CrashlyticsKit
+/Users/djunod2/reality-check-inc/Crashlytics/CrashlyticsKit.Droid/bin/$(Configuration)
+
 On the iOS app, have to do:
 	Build / iOS Build / Additional mtouch arguments: -cxx -gcc_flags "-lc++"
 

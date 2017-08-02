@@ -39,6 +39,7 @@ namespace CrashlyticsKit
 			get
 			{
 				var ret = Implementation.Value;
+				Debug.WriteLine("Current = " + ret);
 				if (ret == null)
 				{
 					throw NotImplementedInReferenceAssembly();
@@ -53,7 +54,7 @@ namespace CrashlyticsKit
 			Debug.WriteLine("portable *is* defined.");
 			return null;
 #else
-            Debug.WriteLine("portable is not defined.");
+            Console.WriteLine("portable is not defined.");
             return new CrashlyticsImplementation();
 #endif
 		}

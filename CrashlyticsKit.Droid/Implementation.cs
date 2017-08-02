@@ -1,5 +1,5 @@
 ﻿//
-// Implementation.cs (iOS)
+// Implementation.cs (Android)
 // Fabric Crashlytics NuGet Package
 //
 // Created by David N. Junod on 8/1/2017
@@ -14,14 +14,14 @@ namespace CrashlyticsKit
 {
     public sealed class CrashlyticsImplementation : Kit, ICrashlytics
     {
-		public CrashlyticsImplementation() : base(Bindings.CrashlyticsKit.Crashlytics.SharedInstance)
+		public CrashlyticsImplementation() : base(new Bindings.CrashlyticsKit.Crashlytics())
 		{
-			Console.WriteLine("Crashlytics initialization (iOS)");
+			Console.WriteLine("Crashlytics initialization (Android)");
 		}
 
 		public void Crash()
 		{
-			Bindings.CrashlyticsKit.Crashlytics.SharedInstance.Crash();
+			//Bindings.CrashlyticsKit.Crashlytics.Crash();
 		}
 
 		public string UserIdentifier
@@ -53,17 +53,17 @@ namespace CrashlyticsKit
 
 		public void SetIntValue(string key, int value)
 		{
-			Bindings.CrashlyticsKit.Crashlytics.SetIntValue(value, key);
+			//Bindings.CrashlyticsKit.Crashlytics.SetIntValue(value, key);
 		}
 
 		public void SetBoolValue(string key, bool value)
-        {
-            Bindings.CrashlyticsKit.Crashlytics.SetBoolValue(value, key);
-        }
+		{
+			//Bindings.CrashlyticsKit.Crashlytics.SetBoolValue(value, key);
+		}
 
 		public void LogEvent(string msg)
 		{
-			Bindings.CrashlyticsKit.Crashlytics.LogEvent(msg, null);
+			//Bindings.CrashlyticsKit.Crashlytics.LogEvent(msg, null);
 		}
 	}
 }

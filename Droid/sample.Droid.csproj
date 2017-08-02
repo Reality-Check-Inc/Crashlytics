@@ -88,6 +88,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -103,6 +104,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\sample\sample.csproj">
@@ -113,6 +115,25 @@
       <Project>{F359E6F1-1080-4FFC-822D-E675CF14E6F5}</Project>
       <Name>FabricSdk.Droid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CrashlyticsKit.Droid\CrashlyticsKit.Droid.csproj">
+      <Project>{2EB31DE8-EB11-4F06-8D78-D222B292BDB0}</Project>
+      <Name>CrashlyticsKit.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrashlyticsCore.Droid\CrashlyticsCore.Droid.csproj">
+      <Project>{5706D79D-5EAB-4408-94E5-CFEC71349F93}</Project>
+      <Name>CrashlyticsCore.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnswersKit.Droid\AnswersKit.Droid.csproj">
+      <Project>{A85D3F18-4352-497C-887C-0A66754F8635}</Project>
+      <Name>AnswersKit.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BetaKit.Droid\BetaKit.Droid.csproj">
+      <Project>{B1610900-DD3B-48C8-AF4D-634A8E546EBD}</Project>
+      <Name>BetaKit.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\crashlytics-build.properties" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
