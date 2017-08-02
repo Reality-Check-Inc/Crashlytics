@@ -22,77 +22,51 @@ namespace CrashlyticsKit
 			Console.WriteLine("Crashlytics initialization (iOS)");
 		}
 
-		public string Version
+		public void Crash()
 		{
-			get
+			Bindings.CrashlyticsKit.Crashlytics.SharedInstance.Crash();
+		}
+
+		public string UserIdentifier
+		{
+			set
 			{
-				throw new NotImplementedException();
+				Bindings.CrashlyticsKit.Crashlytics.SetUserIdentifier(value);
+			}
+		}
+		public string UserName
+		{
+			set
+			{
+				Bindings.CrashlyticsKit.Crashlytics.SetUserName(value);
+			}
+		}
+		public string UserEmail
+		{
+			set
+			{
+				Bindings.CrashlyticsKit.Crashlytics.SetUserEmail(value);
 			}
 		}
 
-		public void Crash()
+		public void SetStringValue(string key, string value)
+		{
+			//Bindings.CrashlyticsKit.Crashlytics.SetStringValue(value, key);
+		}
+
+		public void SetIntValue(string key, int value)
+		{
+			Bindings.CrashlyticsKit.Crashlytics.SetIntValue(value, key);
+		}
+
+		public void SetBoolValue(string key, bool value)
         {
-            throw new NotImplementedException();
+            Bindings.CrashlyticsKit.Crashlytics.SetBoolValue(value, key);
         }
 
-        public ICrashlytics Log(string msg)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RecordException(Exception exception)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetBoolValue(string key, bool value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetDoubleValue(string key, double value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetFloatValue(string key, float value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetIntValue(string key, int value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetLongValue(string key, long value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetObjectValue(string key, object value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetStringValue(string key, string value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetUserEmail(string email)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetUserIdentifier(string identifier)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICrashlytics SetUserName(string name)
-        {
-            throw new NotImplementedException();
-        }
-    }
+		public void LogEvent(string msg)
+		{
+			Bindings.CrashlyticsKit.Crashlytics.LogEvent(msg, null);
+		}
+	}
 }

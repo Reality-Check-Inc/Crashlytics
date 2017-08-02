@@ -17,29 +17,17 @@ namespace CrashlyticsKit
     {
 		void Crash();
 
-		ICrashlytics SetUserIdentifier(string identifier);
+		string UserIdentifier { set; }
+		string UserName { set; }
+		string UserEmail { set; }
 
-		ICrashlytics SetUserName(string name);
+		void SetStringValue(string key, string value);
 
-		ICrashlytics SetUserEmail(string email);
+		void SetIntValue(string key, int value);
 
-		ICrashlytics SetObjectValue(string key, object value);
+		void SetBoolValue(string key, bool value);
 
-		ICrashlytics SetStringValue(string key, string value);
-
-		ICrashlytics SetIntValue(string key, int value);
-
-		ICrashlytics SetBoolValue(string key, bool value);
-
-		ICrashlytics SetFloatValue(string key, float value);
-
-		ICrashlytics SetDoubleValue(string key, double value);
-
-		ICrashlytics SetLongValue(string key, long value);
-
-		ICrashlytics Log(string msg);
-
-		void RecordException(Exception exception);
+		void LogEvent(string msg);
 	}
 
 	public static partial class Crashlytics
