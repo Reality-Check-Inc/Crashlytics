@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -14,6 +15,17 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <ReleaseVersion>1.0.0</ReleaseVersion>
+    <PackageId>Fabric.CrashlyticsCore.Droid</PackageId>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Owners>Reality Check, Inc.</Owners>
+    <PackageProjectUrl>https://github.com/djunod/Crashlytics</PackageProjectUrl>
+    <PackageReleaseNotes>Android 2.3.17</PackageReleaseNotes>
+    <Title>Fabric.CrashlyticsCore.Droid</Title>
+    <Description>Fabric Crashlytics Core (Android)</Description>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageTags>fabric, crashlytics, crashlyticskit, betakit, answerskit</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +61,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\EnumFields.xml" />
@@ -59,4 +72,5 @@
     <LibraryProjectZip Include="Jars\crashlytics-core-2.3.17.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.targets')" />
 </Project>

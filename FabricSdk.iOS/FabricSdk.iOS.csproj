@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,6 +11,17 @@
     <AssemblyName>FabricSdk</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <ReleaseVersion>1.0.0</ReleaseVersion>
+    <PackageId>Fabric.SDK.iOS</PackageId>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>Reality Check, Inc.</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Owners>Reality Check, Inc.</Owners>
+    <PackageProjectUrl>https://github.com/djunod/Crashlytics</PackageProjectUrl>
+    <PackageReleaseNotes>iOS 1.6.12</PackageReleaseNotes>
+    <PackageTags>fabric, crashlytics, crashlyticskit, betakit, answerskit</PackageTags>
+    <Title>FabricSdk.iOS</Title>
+    <Description>Fabric SDK (iOS)</Description>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,5 +64,9 @@
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.1.248\build\NuGet.Build.Packaging.targets')" />
 </Project>
