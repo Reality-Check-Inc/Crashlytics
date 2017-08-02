@@ -15,16 +15,9 @@ using ObjCRuntime;
 
 namespace CrashlyticsKit
 {
-    public sealed class CrashlyticsImplementation : ICrashlytics // : Kit, ICrashlytics
+    public sealed class CrashlyticsImplementation : Kit, ICrashlytics
     {
-        /*
 		public CrashlyticsImplementation() : base(Bindings.CrashlyticsKit.Crashlytics.SharedInstance)
-		{
-			Console.WriteLine("Crashlytics initialization (iOS)");
-		}
-		 */
-
-		public CrashlyticsImplementation()
 		{
 			Console.WriteLine("Crashlytics initialization (iOS)");
 		}

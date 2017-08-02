@@ -12,7 +12,6 @@ using ObjCRuntime;
 
 namespace Bindings.CrashlyticsKit
 {
-    /*
     [Preserve]
     [BaseType(typeof(NSObject))]
     public interface Crashlytics
@@ -22,5 +21,4 @@ namespace Bindings.CrashlyticsKit
 		[Export("sharedInstance")]
 		Crashlytics SharedInstance { get; }
 	}
-	 */
 }

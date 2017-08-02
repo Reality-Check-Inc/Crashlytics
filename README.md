@@ -71,6 +71,9 @@ following this pattern, except putting Abstraction into the shared file.
 		FabricImplementation.cs
  * all implementation assemblies have the same Properties/AssemblyInfo.
 
+On the iOS app, have to do:
+	Build / iOS Build / Additional mtouch arguments: -cxx -gcc_flags "-lc++"
+
 ### iOS
 
 On iOS we will use Objective Sharpie to create the bindings.
