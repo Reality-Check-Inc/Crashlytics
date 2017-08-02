@@ -3,103 +3,100 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "rci-20pt.png",
+      "filename" : "rcilogo-40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "rci-40pt.png",
+      "filename" : "rcilogo-60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "rci-29pt.png",
+      "filename" : "rcilogo-58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "rci-58pt.png",
+      "filename" : "rcilogo-87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "rci-40pt-1.png",
+      "filename" : "rcilogo-80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "rci-80pt.png",
+      "filename" : "rcilogo-121.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "rci-60pt.png",
+      "filename" : "rcilogo-120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "rci-120pt.png",
+      "filename" : "rcilogo-180.png",
       "scale" : "3x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "rci-20pt-1.png",
+      "filename" : "rcilogo-20.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "rci-40pt-2.png",
+      "filename" : "rcilogo-41.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "rci-29pt-1.png",
+      "filename" : "rcilogo-29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "rci-58pt-1.png",
+      "filename" : "rcilogo-59.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "rci-40pt-3.png",
+      "filename" : "rcilogo-42.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "rci-80pt-1.png",
+      "filename" : "rcilogo-81.png",
       "scale" : "2x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "rci-76pt.png",
+      "size" : "76x76",
       "scale" : "1x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "rci-152pt.png",
+      "size" : "76x76",
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "83.5x83.5",
-      "idiom" : "ipad",
-      "filename" : "rci-83.5pt.png",
       "scale" : "2x"
     }
   ],
