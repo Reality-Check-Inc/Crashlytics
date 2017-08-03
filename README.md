@@ -48,60 +48,60 @@ Add strings.xml to Resources/values
 Add & edit MainApplication.cs
 
 ```java
-		public override void OnCreate()
-		{
-			base.OnCreate();
-			Console.WriteLine("OnCreate");
+public override void OnCreate()
+{
+	base.OnCreate();
+	Console.WriteLine("OnCreate");
 
-            // Make sure we have all the things needed for Fabric Crashlytics
-			PackageManager pm = this.PackageManager;
-			string name = this.PackageName;
-			PackageInfo pi = pm.GetPackageInfo(name, 0);
-			string label = pm.GetApplicationLabel(pi.ApplicationInfo);
-			string version = string.Format("{0} ({1})", pi.VersionName, pi.VersionCode);
-			string apiKey = "";
-			ApplicationInfo info = pm.GetApplicationInfo(name, PackageInfoFlags.MetaData);
-			Bundle metaData = info.MetaData;
-			if (metaData != null)
-			{
-				apiKey = metaData.GetString("io.fabric.ApiKey");
-			}
+    // Make sure we have all the things needed for Fabric Crashlytics
+	PackageManager pm = this.PackageManager;
+	string name = this.PackageName;
+	PackageInfo pi = pm.GetPackageInfo(name, 0);
+	string label = pm.GetApplicationLabel(pi.ApplicationInfo);
+	string version = string.Format("{0} ({1})", pi.VersionName, pi.VersionCode);
+	string apiKey = "";
+	ApplicationInfo info = pm.GetApplicationInfo(name, PackageInfoFlags.MetaData);
+	Bundle metaData = info.MetaData;
+	if (metaData != null)
+	{
+		apiKey = metaData.GetString("io.fabric.ApiKey");
+	}
 
-			// make sure we have the build id
-			int id = this.Resources.GetIdentifier("com.crashlytics.android.build_id", "string", PackageName);
-			string buildId = null;
-			if (id != 0)
-				buildId = Resources.GetString(id);
+	// make sure we have the build id
+	int id = this.Resources.GetIdentifier("com.crashlytics.android.build_id", "string", PackageName);
+	string buildId = null;
+	if (id != 0)
+		buildId = Resources.GetString(id);
 
-			// make sure we have the properties
-			string content = null;
-			AssetManager assets = this.Assets;
-            try
-            {
-                using (StreamReader sr = new StreamReader(assets.Open("crashlytics-build.properties")))
-                    content = sr.ReadToEnd();
-            } catch (Exception ex) {
-                Console.WriteLine(ex.ToString());
-            }
-			Console.WriteLine(content);
-			Console.WriteLine("[{0}] [{1}] [{2}] [{3}]", name, label, version, pm.GetInstallerPackageName(name));
-			Console.WriteLine("Fabric Build ID is: {0}", buildId);
-			Console.WriteLine("Fabric ApiKey is: {0}", apiKey);
+	// make sure we have the properties
+	string content = null;
+	AssetManager assets = this.Assets;
+    try
+    {
+        using (StreamReader sr = new StreamReader(assets.Open("crashlytics-build.properties")))
+            content = sr.ReadToEnd();
+    } catch (Exception ex) {
+        Console.WriteLine(ex.ToString());
+    }
+	Console.WriteLine(content);
+	Console.WriteLine("[{0}] [{1}] [{2}] [{3}]", name, label, version, pm.GetInstallerPackageName(name));
+	Console.WriteLine("Fabric Build ID is: {0}", buildId);
+	Console.WriteLine("Fabric ApiKey is: {0}", apiKey);
 
-			if (string.IsNullOrEmpty(apiKey))
-				throw new Exception("Missing io.fabric.ApiKey from AndroidManifest.xml");
-			if (string.IsNullOrEmpty(content))
-				throw new Exception("Missing crashlytics-build.properties from Assets");
-			if (string.IsNullOrEmpty(buildId))
-				throw new Exception("R.string.com.crashlytics.android.build_id");
+	if (string.IsNullOrEmpty(apiKey))
+		throw new Exception("Missing io.fabric.ApiKey from AndroidManifest.xml");
+	if (string.IsNullOrEmpty(content))
+		throw new Exception("Missing crashlytics-build.properties from Assets");
+	if (string.IsNullOrEmpty(buildId))
+		throw new Exception("R.string.com.crashlytics.android.build_id");
 
-			// we can initialize Crashlytics
-			Console.WriteLine("Initialize Fabric");
-			var crashlyticsKit = Crashlytics.Current;
-			Fabric.Current.Debug = true;
+	// we can initialize Crashlytics
+	Console.WriteLine("Initialize Fabric");
+	var crashlyticsKit = Crashlytics.Current;
+	Fabric.Current.Debug = true;
 
-            ((FabricImplementation)Fabric.Current).Context = this;
-		}
+    ((FabricImplementation)Fabric.Current).Context = this;
+}
 ```
 
 ## iOS
@@ -112,48 +112,49 @@ Modify the iOS Build Options, for both Debug and Release
 
 Edit info.plist to add your API key, per https://fabric.io/kits/ios/crashlytics/install
 
-	<key>Fabric</key>
-	<dict>
-    	<key>APIKey</key>
-    	<string>API_KEY</string>
-    	<key>Kits</key>
-    	<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>    
-
+```xml
+<key>Fabric</key>
+<dict>
+	<key>APIKey</key>
+	<string>API_KEY</string>
+	<key>Kits</key>
+	<array>
+		<dict>
+			<key>KitInfo</key>
+			<dict/>
+			<key>KitName</key>
+			<string>Crashlytics</string>
+		</dict>
+	</array>
+</dict>    
+```
 
 ## Forms
 
 Edit App.xaml.cs to include the following usings
 
 ```csharp
-	using CrashlyticsKit;
-	using FabricSdk;
+using CrashlyticsKit;
+using FabricSdk;
 ```
 
 add the following to the body of the App class
 ```csharp
-    #if DEBUG
-	static readonly bool IsDebug = true;
-	#else
-	static readonly bool IsDebug = false;
-	#endif
+#if DEBUG
+static readonly bool IsDebug = true;
+#else
+static readonly bool IsDebug = false;
+#endif
 
-    public App()
-    {
-    	InitializeComponent();
+public App()
+{
+	InitializeComponent();
 
-        Fabric.Current.Debug = IsDebug;
-        Fabric.Current.With(new IKit[] { Crashlytics.Current});
+	Fabric.Current.Debug = IsDebug;
+	Fabric.Current.With(new IKit[] { Crashlytics.Current});
 
-        MainPage = new samplePage();
-	}
+	MainPage = new samplePage();
+}
 ```
 
 
