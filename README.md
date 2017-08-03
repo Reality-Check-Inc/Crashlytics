@@ -1,16 +1,16 @@
 # Crashlytics
 Xamarin component for Crashlytics
 
-Project Url: https://github.com/djunod/Crashlytics  
+Project Url: https://github.com/Reality-Check-Inc/Crashlytics.git  
 Tags: fabric, crashlytics, crashlyticskit, betakit, answerskit  
 
 
 | Module                        | Framework     | Version | Date |
 |-------------------------------|---------------|---------|------|
-| FabricSdk                     | Profile111    | 1.0.0.0 | 2017/07/29 |
+| FabricSdk                     | Profile111    | 1.0.0   | 2017/07/29 |
 | FabricSdk.Droid               | monoandroid60 | 1.3.17  | 2017/07/29 |
 | FabricSdk.iOS                 | xamarinios10  | 1.6.12  | 2017/07/29 |
-| Fabric.CrashlyticsKit         | Profile111    | 1.0.0.0 | 2017/07/29 |
+| Fabric.CrashlyticsKit         | Profile111    | 1.0.0   | 2017/07/29 |
 | Fabric.CrashlyticsKit.Droid   | monoandroid60 | 2.6.8   | 2017/07/29 |
 | Fabric.CrashlyticsKit.iOS     | xamarinios10  | 3.8.5   | 2017/07/29 |
 | Fabric.AnswersKit.Droid       | monoandroid60 | 1.3.13  | 2017/07/29 |
@@ -20,10 +20,32 @@ Tags: fabric, crashlytics, crashlyticskit, betakit, answerskit
 Install
 -------
 
+Create a native iOS and Android app
+
+## QABuild.Tools
+
+Open a terminal and navigate to the directory with the project .sln file.
+
+    qabuild init
+    
+Modify .qabuild.tools/Fabric.properties to use the correct variables
+
+    crashlytics_api_token RCI_CRASHLYTICS_API_TOKEN
+    crashlytics_build_secret RCI_CRASHLYTICS_BUILD_SECRET
+
 ## Android
 
-- Edit AndroidManifest.xml per https://fabric.io/kits/android/crashlytics/install
-- Add & edit MainApplication.cs
+Modify the Android Build Options, for both Debug and Release
+
+	Build / Android Build / Enable Multi-Dex: true
+
+Edit AndroidManifest.xml to add your API key, per https://fabric.io/kits/android/crashlytics/install
+
+Add crashlytics-build.properties to Assets
+
+Add strings.xml to Resources/values
+
+Add & edit MainApplication.cs
 
 ```java
 		public override void OnCreate()
@@ -31,7 +53,7 @@ Install
 			base.OnCreate();
 			Console.WriteLine("OnCreate");
 
-			// this is just here to show us the current info
+            // Make sure we have all the things needed for Fabric Crashlytics
 			PackageManager pm = this.PackageManager;
 			string name = this.PackageName;
 			PackageInfo pi = pm.GetPackageInfo(name, 0);
@@ -84,7 +106,56 @@ Install
 
 ## iOS
 
-- Edit info.plist per https://fabric.io/kits/ios/crashlytics/install
+Modify the iOS Build Options, for both Debug and Release
+
+	Build / iOS Build / Additional mtouch arguments: -cxx -gcc_flags "-lc++"
+
+Edit info.plist to add your API key, per https://fabric.io/kits/ios/crashlytics/install
+
+	<key>Fabric</key>
+	<dict>
+    	<key>APIKey</key>
+    	<string>API_KEY</string>
+    	<key>Kits</key>
+    	<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>    
+
+
+## Forms
+
+Edit App.xaml.cs to include the following usings
+
+```csharp
+	using CrashlyticsKit;
+	using FabricSdk;
+```
+
+add the following to the body of the App class
+```csharp
+    #if DEBUG
+	static readonly bool IsDebug = true;
+	#else
+	static readonly bool IsDebug = false;
+	#endif
+
+    public App()
+    {
+    	InitializeComponent();
+
+        Fabric.Current.Debug = IsDebug;
+        Fabric.Current.With(new IKit[] { Crashlytics.Current});
+
+        MainPage = new samplePage();
+	}
+```
+
 
 Versions
 --------
